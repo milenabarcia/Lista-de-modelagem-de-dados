@@ -1,0 +1,56 @@
+CREATE TABLE Desenvolvedor (
+    ID                 INTEGER PRIMARY KEY AUTOINCREMENT ,
+    Nome               VARCHAR(255),
+    CPF                VARCHAR(14),
+    DataNascimento     DATE
+);
+
+CREATE TABLE Projeto (
+    ID               INTEGER PRIMARY KEY AUTOINCREMENT ,
+    Nome             VARCHAR(255),
+    DataLancamento   DATE,
+    Genero           VARCHAR(100),
+    FaixaEtaria      VARCHAR(100)
+);
+CREATE TABLE Desenvolvedor_Projeto (
+    DesenvolvedorID INT,
+    ProjetoID       INT,
+    PRIMARY KEY (DesenvolvedorID, ProjetoID),
+    FOREIGN KEY (DesenvolvedorID) REFERENCES Desenvolvedor(ID),
+    FOREIGN KEY (ProjetoID) REFERENCES Projeto(ID)
+);
+
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Lucas Dolnato', '23456798787', '2000-09-23');
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Jonas Silva', '12345678910', '1995-04-18');
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Mariana Rocha', '45699888798', '2001-07-22');
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Silvia Andrade', '99987689009', '1993-10-10');
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Maria Souza', '88897809890', '1995-02-29');
+INSERT INTO Desenvolvedor (Nome, CPF, DataNascimento) VALUES ('Luna Alves', '36255578944', '1991-06-16');
+
+INSERT INTO Projeto (Nome, DataLancamento, Genero, FaixaEtaria) VALUES ('Skyline', '2024-05-20', 'Arcade', '+8 anos');
+INSERT INTO Projeto (Nome, DataLancamento, Genero, FaixaEtaria) VALUES ('Red', '2024-08-04', 'Puzzle', '+12 anos');
+INSERT INTO Projeto (Nome, DataLancamento, Genero, FaixaEtaria) VALUES ('Fallout 5', '2025-10-09', 'RPG', '+18 anos');
+INSERT INTO Projeto (Nome, DataLancamento, Genero, FaixaEtaria) VALUES ('Barbie', '2024-12-08', 'Puzzle', 'Livre');
+INSERT INTO Projeto (Nome, DataLancamento, Genero, FaixaEtaria) VALUES ('The Sims', '2025-02-10', 'Simulação', 'Livre');
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (1, 1);
+
+
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (2, 2);
+
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (3, 3);
+
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (4, 3);
+
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (5, 4);
+
+INSERT INTO Desenvolvedor_Projeto (DesenvolvedorID, ProjetoID)
+VALUES (6, 5);
+
+SELECT*FROM Desenvolvedor
+SELECT*FROM Projeto
+SELECT*FROM Desenvolvedor_Projeto
