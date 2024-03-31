@@ -41,3 +41,7 @@ INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (3, 3);
 INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (4, 4); 
 INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (4, 5); 
 INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (5, 6);
+
+SELECT*FROM Marca
+SELECT*FROM Produto
+SELECT*FROM Marca_Produto
