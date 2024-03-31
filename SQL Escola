@@ -19,3 +19,5 @@ INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0009, 'Sa
 INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0010, 'Hinata Hyuuga', '1999-12-27', 'byakuganhinata@gmail.com', 1);
 INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0011, 'Neji Hyuuga', '1999-07-03', 'nejihyuuga@live.com', 1);
 INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0012, 'Shikamaru Nara', '1999-09-22', 'kagemane@bol.com.br', 1);
+
+SELECT * FROM Aluno
