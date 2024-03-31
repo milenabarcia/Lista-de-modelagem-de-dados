@@ -1,0 +1,43 @@
+CREATE TABLE Produto (
+    ID_produto        INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nome              VARCHAR(100),
+    Preco             DECIMAL(10, 2),
+    QuantidadeEstoque INTEGER
+);
+
+
+CREATE TABLE Marca (
+    ID_marca         INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nome             VARCHAR(100),
+    SAC              VARCHAR(100),
+    Nacionalidade    VARCHAR(100)
+);
+
+
+CREATE TABLE Marca_Produto (
+    ID_marca     INTEGER,
+    ID_produto   INTEGER,
+    PRIMARY KEY (ID_marca, ID_produto),
+    FOREIGN KEY (ID_marca) REFERENCES Marca(ID_marca),
+    FOREIGN KEY (ID_produto) REFERENCES Produto(ID_produto)
+);
+
+INSERT INTO Marca (Nome, SAC, Nacionalidade) VALUES ('Lindoya', '0800-0128800', 'Brasileira');
+INSERT INTO Marca (Nome, SAC, Nacionalidade) VALUES ('Dove', '0800-707-7512', 'Americana');
+INSERT INTO Marca (Nome, SAC, Nacionalidade) VALUES ('Barilla', '0800-0553-199', 'Italiana');
+INSERT INTO Marca (Nome, SAC, Nacionalidade) VALUES ('Camil', '0800-013-3300', 'Brasileira');
+INSERT INTO Marca (Nome, SAC, Nacionalidade) VALUES ('Heineken', '0800-888-1010', 'Holandesa');
+
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Água', 1.98, 30);
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Sabonete', 2.30, 40);
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Macarrão', 10.98, 35);
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Feijão', 9.32, 28);
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Arroz', 14.59, 32);
+INSERT INTO Produto (Nome, Preco, QuantidadeEstoque) VALUES ('Cerveja', 6.49, 50);
+
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (1, 1); 
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (2, 2); 
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (3, 3); 
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (4, 4); 
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (4, 5); 
+INSERT INTO Marca_Produto (ID_marca, ID_produto) VALUES (5, 6);
