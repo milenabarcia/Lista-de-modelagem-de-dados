@@ -1,0 +1,55 @@
+CREATE TABLE Autor (
+    ID_autor       INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nome           VARCHAR(100),
+    Email          VARCHAR(100),
+    Nacionalidade  VARCHAR(100),
+    DataNascimento DATE
+);
+
+CREATE TABLE Livro (
+    ID_livro           INTEGER PRIMARY KEY AUTOINCREMENT,
+    Titulo             VARCHAR(255),
+    QuantidadePaginas  INTEGER,
+    Acabamento         VARCHAR(100),
+    Editora            VARCHAR(100),
+    AutorID            INTEGER,
+    FOREIGN KEY (AutorID) REFERENCES Autor(ID_autor)
+);
+
+CREATE TABLE Autor_Livro (
+    ID_autor_livro     INTEGER PRIMARY KEY AUTOINCREMENT,
+    AutorID            INTEGER,
+    LivroID            INTEGER,
+    FOREIGN KEY (AutorID) REFERENCES Autor(ID_autor),
+    FOREIGN KEY (LivroID) REFERENCES Livro(ID_livro)
+);
+
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('J.K. Rowling', 'jk_rowling@gmail.com', 'Britânica', '1965-07-31');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('J.R.R. Tolkien', 'jrrtolkie@live.com', 'Britânica', '1892-01-02');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('Isaac Asimov', 'asimov_i@hotmail.com', 'Russo', '1919-10-04');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('Mary Shelly', 'maryshelly@gmail.com', 'Britânica', '1797-08-30');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('Enéias Tavares', 'etavares@live.com', 'Brasileiro', '1981-11-17');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('Andy Weir', 'weir_a@gmail.com', 'Americano', '1972-06-16');
+INSERT INTO Autor (Nome, Email, Nacionalidade, DataNascimento) VALUES ('Becky Chambers', 'beckey.chambers@gmail.com', 'Americana', '1985-05-03');
+
+
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Harry Potter e a Pedra Filosofal', 264, 'Brochura', 'Rocco', 1);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('O Senhor dos Anéis', 1211, 'Capa dura', 'Martins Fontes', 2);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Eu Robo', 320, 'Brochura', 'Aleph', 3);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Frankenstein', 304, 'Capa Dura', 'Darkside', 4);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Parthenon Místico', 352, 'Capa Dura', 'Darkside', 5);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Perdido em Marte', 336, 'Brochura', 'Arqueiro', 6);
+INSERT INTO Livro (Titulo, QuantidadePaginas, Acabamento, Editora, AutorID) VALUES ('Uma longa viagem a um pequeno planeta hostil', 352, 'Capa Dura', 'Darkside', 7);
+
+
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (1, 1);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (2, 2);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (3, 3);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (4, 4);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (5, 5);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (6, 6);  
+INSERT INTO Autor_Livro (AutorID, LivroID) VALUES (7, 7); 
+
+SELECT*FROM Autor
+SELECT*FROM Livro
+SELECT*FROM Autor_Livro
