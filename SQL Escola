@@ -1,0 +1,21 @@
+CREATE TABLE Escola (
+    ID_escola INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nome VARCHAR(100),
+    Endereco VARCHAR(255)
+);
+
+CREATE TABLE Aluno (
+    RA INTEGER PRIMARY KEY,
+    Nome VARCHAR(100),
+    DataNascimento DATE,
+    Email VARCHAR(100),
+    ID_escola INTEGER,
+    FOREIGN KEY (ID_escola) REFERENCES Escola(ID_escola)
+);
+INSERT INTO Escola (Nome, Endereco) VALUES ('Academia Ninja', 'Konoha');
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0007, 'Naruto Uzumaki', '1999-10-10', 'narutohokage@gmail.com', 1);
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0008, 'Sasuki Uchiha', '1999-07-23', 'faltaodio.uchiha@live.com', 1);
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0009, 'Sakura Haruno', '1999-03-28', 'haruno.s@hotmail.com', 1);
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0010, 'Hinata Hyuuga', '1999-12-27', 'byakuganhinata@gmail.com', 1);
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0011, 'Neji Hyuuga', '1999-07-03', 'nejihyuuga@live.com', 1);
+INSERT INTO Aluno (RA, Nome, DataNascimento, Email, ID_escola) VALUES (0012, 'Shikamaru Nara', '1999-09-22', 'kagemane@bol.com.br', 1);
