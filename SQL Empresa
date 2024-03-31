@@ -22,3 +22,5 @@ INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empr
 INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (5, 'Natasha Ronanoff', '352.470.208-20', 'Gerente de Marketing', 15000.00, 1);
 INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (6, 'Piper Pots', '418.631.678-38', 'Gerente do RH', 30000.00, 1);
 INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (7, 'Tony Stark', '523.484.648-29', 'CEO', 100000.00, 1);
+
+SELECT*FROM Colaborador
