@@ -1,0 +1,24 @@
+CREATE TABLE Colaborador (
+    CodigoIdentificacao       INTEGER PRIMARY KEY,
+    Nome                      VARCHAR(100),
+    CPF                       VARCHAR(14) UNIQUE,
+    Cargo                     VARCHAR(100),
+    Salario                   DECIMAL(10, 2),
+    ID_empresa                INTEGER,
+    FOREIGN KEY (ID_empresa) REFERENCES Empresa(ID_empresa)
+);
+
+CREATE TABLE Empresa (
+    ID_empresa    INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nome          VARCHAR(100),
+    CNPJ          VARCHAR(14) UNIQUE
+);
+
+INSERT INTO Empresa (Nome, CNPJ) VALUES ('Stark Industries', '07.858.407/0001-01');
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (1, 'Shuri Aja-Adanna', '804.973.720-96', 'Programador Pleno', 5000.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (2, 'Bruce Banners', '211.350.420-04', 'Programador Junior', 10000.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (3, 'Visão', '898.900.108-01', 'Programador Senior', 25000.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (4, 'Peter Park', '161.462.668-50', 'Estagiário', 2500.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (5, 'Natasha Ronanoff', '352.470.208-20', 'Gerente de Marketing', 15000.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (6, 'Piper Pots', '418.631.678-38', 'Gerente do RH', 30000.00, 1);
+INSERT INTO Colaborador (CodigoIdentificacao, Nome, CPF, Cargo, Salario, ID_empresa) VALUES (7, 'Tony Stark', '523.484.648-29', 'CEO', 100000.00, 1);
