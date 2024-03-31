@@ -1,0 +1,17 @@
+CREATE TABLE Automovel (
+    Placa             VARCHAR(10) PRIMARY KEY,
+    Modelo            VARCHAR(100),
+    Ano               INTEGER,
+    NomeMontadora     VARCHAR(100),
+    SiteMontadora     VARCHAR(255),
+    LogotipoMontadora VARCHAR(255)
+);
+
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('DFG-1234', 'Spin', 2015, 'Chevrolet', 'https://www.chevrolet.com.br', 'imagem');
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('SAD-0001', 'Onix', 2018, 'Chevrolet', 'https://www.chevrolet.com.br', 'imagem');
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('GOD-0000', 'Cobalt', 2019, 'Chevrolet', 'https://www.chevrolet.com.br', 'imagem');
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('LOL-2323', 'Fiesta', 2011, 'Ford', 'https://www.ford.com.br', 'imagem');
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('POP-1989', 'Ka', 2016, 'Ford', 'https://www.ford.com.br', 'imagem');
+INSERT INTO Automovel (Placa, Modelo, Ano, NomeMontadora, SiteMontadora, LogotipoMontadora) VALUES ('KKK-9874', 'Palio', 2020, 'Fiat', 'https://www.fiat.com.br', 'imagem');
+
+SELECT*FROM Automovel
