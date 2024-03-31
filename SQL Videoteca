@@ -20,12 +20,15 @@ CREATE TABLE Diretor (
     Nacionalidade      VARCHAR(100)
 );
 
-CREATE TABLE Ator_Filme (
-    ID_ator  INTEGER,
-    ID_filme INTEGER,
-    PRIMARY KEY (ID_ator, ID_filme),
+CREATE TABLE Ator_Filme_Diretor (
+    ID_ator    INTEGER,
+    ID_filme   INTEGER,
+    ID_diretor INTERGER,
+
+    PRIMARY KEY (ID_ator, ID_filme, ID_Diretor),
     FOREIGN KEY (ID_ator) REFERENCES Ator_Atriz(ID_ator),
-    FOREIGN KEY (ID_filme) REFERENCES Filme(ID_filme)
+    FOREIGN KEY (ID_filme) REFERENCES Filme(ID_filme),
+    FOREIGN KEY (ID_diretor) REFERENCES Diretor(ID_diretor)
 );
 
 INSERT INTO Filme (Titulo, Duracao, IdiomaOriginal, Preco) VALUES ('Perdido em Marte', 144, 'Inglês', 24.99);
@@ -37,12 +40,26 @@ INSERT INTO Filme (Titulo, Duracao, IdiomaOriginal, Preco) VALUES ('Star Wars IV
 
 INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Matt Damon', '1970-10-08', 'Americano');
 INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Daniel Radcliffe', '1989-07-23', 'Britânico');
+INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Keir Dullea', '1936-05-30', 'Americano');
 INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Keira Knightley', '1985-03-26', 'Britânica');
 INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Martin Freeman', '1971-09-08', 'Britânico');
 INSERT INTO Ator_Atriz (Nome, DataNascimento, Nacionalidade) VALUES ('Mark Hamill', '1951-09-25', 'Americano');
 
-INSERT INTO Ator_Filme (ID_ator, ID_filme) VALUES (1, 1);
-INSERT INTO Ator_Filme (ID_ator, ID_filme) VALUES (2, 2); 
-INSERT INTO Ator_Filme (ID_ator, ID_filme) VALUES (3, 4); 
-INSERT INTO Ator_Filme (ID_ator, ID_filme) VALUES (4, 5); 
-INSERT INTO Ator_Filme (ID_ator, ID_filme) VALUES (5, 6);
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('Ridley Scott', 'Britânico');
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('Chris Columbus', 'Americano');
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('Stanley Kubrick', 'Americano');
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('Joe Wright', 'Britânico');
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('Peter Jackson', 'Neozelandês');
+INSERT INTO Diretor (Nome, Nacionalidade) VALUES ('George Lucas', 'Americano');
+
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (1, 1, 1);
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (2, 2, 2); 
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (3, 3, 3); 
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (4, 4, 4); 
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (5, 5, 5);
+INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (6, 6, 6);
+
+SELECT*FROM Filme
+SELECT*FROM Ator_Atriz
+SELECT*FROM Ator
+SELECT*FROM Ator_Filme_Diretor
