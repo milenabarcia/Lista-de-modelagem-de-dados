@@ -1,0 +1,49 @@
+CREATE TABLE Cliente (
+    ID_cliente         INTEGER  PRIMARY KEY AUTOINCREMENT ,
+    Nome               VARCHAR(100),
+    CPF                VARCHAR(14) UNIQUE,
+    Email              VARCHAR(100),
+    Telefone           VARCHAR(20)
+);
+
+CREATE TABLE Pet (
+    ID_pet            INTEGER  PRIMARY KEY AUTOINCREMENT,
+    Espécie           VARCHAR(50),
+    Nome              VARCHAR(100),
+    Data_nascimento   DATE
+);
+
+CREATE TABLE Cliente_Pet (
+    ID_cliente     INT,
+    ID_pet         INT,
+    PRIMARY KEY (ID_cliente, ID_pet),
+    FOREIGN KEY (ID_cliente)         REFERENCES Cliente(ID_cliente),
+    FOREIGN KEY (ID_pet)             REFERENCES Pet(ID_pet)
+);
+
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES ('Maria Silva', '000.111.222-21', 'Ma.silva@gmail.com', '(15)1234-2345');
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES('Julia Santos', '123.321.345-87', 'Jusanto@gmail.com', '(11)3836-9514');
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES('Bruna Amorin', '213.987.654-90', 'b.amorin@gmail.com', '(15)3363-3135');
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES('José Pascal', '334.978.098-00', 'j.pascal@bol.com.br', '(13)8765-7892');
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES('Bruna Amaral', '333.867.908-45', 'bruna.a@hotmail.com', '(15)99341-2345');
+INSERT INTO Cliente (Nome, CPF, Email, Telefone) VALUES('Pedro Pascal', '556.663.857-65', 'ppascal@gmail.com', '(11)96351-1524');
+
+
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES ('Gato', 'Luna', '2015-05-12');
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES('Calopsita', 'Abigail', '2013-10-01');
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES('Cão', 'Pantera', '2020-08-23');
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES('Cágado', 'Juliano', '1994-06-12');
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES('Papagaio', 'Yago', '1989-12-25');
+INSERT INTO Pet (Espécie, Nome, Data_nascimento) VALUES('Yoda', 'Grogu', '1500-01-10');
+
+
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(1, 1); -- Maria Silva - Luna (Gato)
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(2, 2); -- Julia Santos - Abigail (Calopsita)
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(3, 3); -- Bruna Amorin - Pantera (Cão)
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(4, 4); -- José Pascal - Juliano (Cágado)
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(5, 5); -- Bruna Amaral - Yago (Papagaio)
+INSERT INTO Cliente_Pet (ID_cliente, ID_pet) VALUES(6, 6); -- Pedro Pascal - Grogu (Yoda)
+
+SELECT * FROM Cliente
+SELECT * FROM Pet
+SELECT * FROM Cliente_Pet
