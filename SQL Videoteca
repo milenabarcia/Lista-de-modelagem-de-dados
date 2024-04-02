@@ -23,7 +23,7 @@ CREATE TABLE Diretor (
 CREATE TABLE Ator_Filme_Diretor (
     ID_ator    INTEGER,
     ID_filme   INTEGER,
-    ID_diretor INTERGER,
+    ID_diretor INTEGER,
 
     PRIMARY KEY (ID_ator, ID_filme, ID_Diretor),
     FOREIGN KEY (ID_ator) REFERENCES Ator_Atriz(ID_ator),
@@ -61,5 +61,4 @@ INSERT INTO Ator_Filme_Diretor  (ID_ator, ID_filme,ID_diretor) VALUES (6, 6, 6);
 
 SELECT*FROM Filme
 SELECT*FROM Ator_Atriz
-SELECT*FROM Ator
 SELECT*FROM Ator_Filme_Diretor
